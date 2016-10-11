@@ -1,24 +1,27 @@
-# mocha-cucumber
+# mocha-nightwatch-cucumber
 
-mocha-cucumber is a UI module for [mocha](https://github.com/mochajs/mocha)
-that allows you to describe your features using Given/When/Then!
+`mocha-nightwatch-cucumber` is a [nightwatch](https://github.com/nightwatchjs/nightwatch)
+compatible UI module for
+[mocha](https://github.com/mochajs/mocha) that allows you to describe your
+features using Given/When/Then!
 
 ## Installing
 
-You should first have mocha installed:
+You should first have `mocha` installed:
 ```
 npm install -g mocha
 ```
 
-Then install mocha-cucumber, either globally or inside your project:
+Then install `mocha-nightwatch-cucumber`, either globally or inside your project:
+
 ```
-npm install -g mocha-cucumber
+npm install -g mocha-nightwatch-cucumber
 ```
 
 
 ## Usage
 
-Write your feature(s): 
+Write your feature(s):
 
 ```
 {expect} = require 'chai'
@@ -56,7 +59,7 @@ Feature('Math', function() {
 
 Then run mocha:
 ```
-mocha --ui mocha-cucumber test/*
+mocha --ui mocha-nightwatch-cucumber test/*
 ```
 
 And you get:
@@ -64,18 +67,14 @@ And you get:
 
 ### What's going on?
 
-mocha-cucumber aliases `Scenario` and `Feature` as alieses to mocha's 
-exising `describe`, and `Given`/`When`/`Then`/`And`/`But` as aliases to mocha's 
+mocha-cucumber aliases `Scenario` and `Feature` as alieses to mocha's
+exising `describe`, and `Given`/`When`/`Then`/`And`/`But` as aliases to mocha's
 `it` BDD methods.   
 
 `describe` and `it` still work as usual, so you can combine your cucumber features
-with BDD specs and it will Just Work(tm). 
+with BDD specs and it will Just Work(tm).
 
 ### Contributing
 
-Feel free to submit issues and/or PRs!  In lieu of a formal style guide, 
+Feel free to submit issues and/or PRs!  In lieu of a formal style guide,
 please follow existing styles.
-
-
-
-
