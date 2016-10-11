@@ -1,4 +1,4 @@
-mocha = require 'mocha'
+mocha = require 'mocha-nightwatch'
 Base = mocha.reporters.Base
 
 Spec = (runner) ->
@@ -18,7 +18,7 @@ Spec = (runner) ->
 
   runner.on "suite", (suite) ->
     ++indents
-    console.log color("suite", "%s%s: %s"), 
+    console.log color("suite", "%s%s: %s"),
       indent(), suite.name or '', suite.title
 
   runner.on "suite end", (suite) ->
@@ -31,15 +31,15 @@ Spec = (runner) ->
 
   runner.on "pass", (test) ->
     if "fast" is test.speed
-      fmt = indent() + 
-        color("checkmark", "  " + 
-        Base.symbols.ok) + 
+      fmt = indent() +
+        color("checkmark", "  " +
+        Base.symbols.ok) +
         color("bright pass", " %s %s ")
       cursor.CR()
       console.log fmt, test.name or '', test.title
     else
-      fmt = indent() + 
-        color("checkmark", "  " + Base.symbols.ok) + 
+      fmt = indent() +
+        color("checkmark", "  " + Base.symbols.ok) +
         color("pass", " %s %s ") +
         color(test.speed, "(%dms)")
       cursor.CR()
@@ -47,7 +47,7 @@ Spec = (runner) ->
 
   runner.on "fail", (test, err) ->
     cursor.CR()
-    console.log indent() + 
+    console.log indent() +
       color("fail", "  %d) %s %s"), ++n, test.name or '', test.title
 
   runner.on "end", self.epilogue.bind(self)

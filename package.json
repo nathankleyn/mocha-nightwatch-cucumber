@@ -1,18 +1,21 @@
 {
-  "name": "mocha-cucumber",
-  "version": "0.0.5",
-  "description": "Mocha and Cucumber - two great tastes that taste great together!",
+  "name": "mocha-nightwatch-cucumber",
+  "version": "1.0.0",
+  "description": "Nightwatch compatible version of mocha-cucumber.",
   "main": "index.js",
-  "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --ui ../../../index.js --compilers coffee:coffee-script ./test/*"
-  },
-  "author": {
-    "name": "Steve Lamb",
-    "email": "steve@stevelamb.io"
-  },
+  "authors": [
+    {
+      "name": "Steve Lamb",
+      "email": "steve@stevelamb.io"
+    },
+    {
+      "name": "Nathan Kleyn",
+      "email": "nathan@nathankleyn.com"
+    }
+  ],
   "license": "MIT",
   "keywords": [
-    "mocha", 
+    "mocha",
     "cucumber",
     "cukes",
     "bdd",
@@ -21,16 +24,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/zeevl/mocha-cucumber.git"
+    "url": "https://github.com/nathankleyn/mocha-nightwatch-cucumber.git"
   },
   "bugs": {
-    "url": "https://github.com/zeevl/mocha-cucumber/issues"
+    "url": "https://github.com/nathankleyn/mocha-nightwatch-cucumber/issues"
   },
   "dependencies": {
     "coffee-script": "^1.8.0",
-    "mocha": "^2.0.1"
-  },
-  "devDependencies": {
-    "chai": "^1.10.0"
+    "mocha-nightwatch": "^2.0.1"
   }
 }
