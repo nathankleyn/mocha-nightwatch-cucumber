@@ -18,12 +18,15 @@ Spec = (runner) ->
 
   runner.on "suite", (suite) ->
     ++indents
-    console.log color("suite", "%s%s: %s"),
-      indent(), suite.name or '', suite.title
+    unless suite.root
+      suiteName = if suite.name?.length > 0 then "#{suite.name}: " else ""
+      console.log color("suite", "%s%s%s"),
+        indent(), suiteName, suite.title
 
   runner.on "suite end", (suite) ->
     --indents
-    console.log()  if 1 is indents
+    unless suite.root
+      console.log()  if 1 is indents
 
   runner.on "pending", (test) ->
     fmt = indent() + color("pending", "  - %s %s")
