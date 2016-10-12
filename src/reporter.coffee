@@ -18,10 +18,10 @@ Spec = (runner) ->
 
   runner.on "suite", (suite) ->
     ++indents
-    unless suite.root
-      suiteName = if suite.name?.length > 0 then "#{suite.name}: " else ""
-      console.log color("suite", "%s%s%s"),
-        indent(), suiteName, suite.title
+    return if suite.root
+    suiteName = if suite.name?.length > 0 then "#{suite.name}: " else ""
+    console.log color("suite", "%s%s%s"),
+      indent(), suiteName, suite.title
 
   runner.on "suite end", (suite) ->
     --indents

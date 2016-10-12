@@ -1,6 +1,12 @@
 mocha = require 'mocha-nightwatch'
 reporter = require './reporter'
 
+toObject = (keys, values) ->
+  return {} unless keys
+  result = {}
+  (if values then result[k] = values[i] else result) for k, i in keys
+  result
+
 module.exports = (suite) ->
   mocha.interfaces.bdd suite
 
@@ -24,7 +30,9 @@ module.exports = (suite) ->
 
     context.ScenarioOutline = (title, fn, examples) ->
       suite = context.describe title, ->
-        for example in examples
+        keys = examples[0]
+        for exampleValues in examples[1..]
+          example = toObject(keys, exampleValues)
           innerSuite = context.describe JSON.stringify(example), ->
             fn(example);
           innerSuite.name = 'Example'
