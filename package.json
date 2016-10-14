@@ -1,6 +1,6 @@
 {
   "name": "mocha-nightwatch-cucumber",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Nightwatch compatible version of mocha-cucumber.",
   "main": "index.js",
   "authors": [
